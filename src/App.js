@@ -47,18 +47,26 @@ export default function App() {
             <img src={iconUrl} alt={iconAlt} />
           </li>
         </ul>
+        <p>
+          my <a href="https://github.com/annadelehanty/weather-react">github</a>
+        </p>
       </div>
     );
   } else {
     return (
-      <form onSubmit={getData}>
-        <input
-          type="search"
-          placeholder="enter a city..."
-          onChange={updateCity}
-        />
-        <input type="submit" />
-      </form>
+      <div>
+        <form onSubmit={getData}>
+          <input
+            type="search"
+            placeholder="enter a city..."
+            onChange={updateCity}
+          />
+          <input type="submit" />
+        </form>
+        <p>
+          my <a href="https://github.com/annadelehanty/weather-react">github</a>
+        </p>
+      </div>
     );
   }
 }
