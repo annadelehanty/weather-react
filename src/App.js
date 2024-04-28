@@ -1,4 +1,5 @@
 import "./App.css";
+// remember when you make your css to create a new file and remove this one
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -47,9 +48,17 @@ export default function App() {
             <img src={iconUrl} alt={iconAlt} />
           </li>
         </ul>
-        <p>
-          my <a href="https://github.com/annadelehanty/weather-react">github</a>
-        </p>
+        <footer>
+          <p>
+            my{" "}
+            <a
+              href="https://github.com/annadelehanty/weather-react"
+              target="_blank"
+            >
+              github
+            </a>
+          </p>
+        </footer>
       </div>
     );
   } else {
