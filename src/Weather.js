@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ScaleText from "react-scale-text";
 
 export default function Weather() {
   let [city, setCity] = useState("");
@@ -40,11 +39,7 @@ export default function Weather() {
         />
         <input type="submit" />
       </form>
-      <div className="parent" style={{ width: "100%", height: "100px" }}>
-        <ScaleText widthOnly={true}>
-          <h2 className="child">{city}</h2>
-        </ScaleText>
-      </div>
+          <h2>{city.toUpperCase()}</h2>
       <div className="row">
         <ul className="col-6">
           <li>
