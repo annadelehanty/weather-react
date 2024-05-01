@@ -2,13 +2,25 @@ form {
   display: flex;
   justify-content: center;
 }
+ul {
+  list-style: none;
+}
+h2 {
+  font-family: karita;
+}
 h2,
 p {
   text-align: center;
 }
-ul {
-  list-style: none;
+
+.weather-app {
+  max-width: 700px;
+  background-color: aliceblue;
 }
 .col-6 {
   padding: 0px;
+}
+@font-face {
+  font-family: karita;
+  src: url(./fonts/Karita.otf);
 }

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ScaleText from "react-scale-text";
 
 export default function Weather() {
   let [city, setCity] = useState("");
+  let [submittedCity, setSubmittedCity] = useState("");
   let [temperature, setTemperature] = useState(null);
   let [description, setDescription] = useState("");
   let [humidity, setHumidity] = useState(null);
@@ -17,17 +19,19 @@ export default function Weather() {
     setWindSpeed(response.data.wind.speed);
     setIconUrl(response.data.condition.icon_url);
     setIconAlt(response.data.condition.icon);
+    setCity(response.data.city);
   }
   function getData(event) {
-    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    let url = `https://api.shecodes.io/weather/v1/current?query=${submittedCity}&key=${apiKey}`;
     axios.get(url).then(createDataset);
     event.preventDefault();
   }
   function updateCity(event) {
-    setCity(event.target.value);
+    setSubmittedCity(event.target.value);
   }
   return (
-    <div class="container-fluid">
+    <div className="container-fluid weather-app">
+      <h1 className="d-none">interactive weather application</h1>
       <form onSubmit={getData}>
         <input
           type="search"
@@ -36,18 +40,22 @@ export default function Weather() {
         />
         <input type="submit" />
       </form>
-      <h2>{city.toUpperCase()}</h2>
-      <div class="row">
-        <ul class="col-6">
+      <div className="parent" style={{ width: "100%", height: "100px" }}>
+        <ScaleText widthOnly={true}>
+          <h2 className="child">{city}</h2>
+        </ScaleText>
+      </div>
+      <div className="row">
+        <ul className="col-6">
+          <li>
+            <img src={iconUrl} alt={iconAlt} />
+          </li>
           <li>Temperature: {Math.round(temperature)}°C</li>
           <li>Description: {description}</li>
           <li>Humidity: {humidity}%</li>
           <li>Wind: {windSpeed}km/h</li>
-          <li>
-            <img src={iconUrl} alt={iconAlt} />
-          </li>
         </ul>
-        <ul class="col-6">
+        <ul className="col-6">
           <li>monday</li>
           <li>tuesday</li>
           <li>wednesday</li>
