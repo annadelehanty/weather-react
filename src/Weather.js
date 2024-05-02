@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ReactFitty } from "react-fitty";
 
 export default function Weather() {
   let [city, setCity] = useState("");
@@ -39,15 +40,16 @@ export default function Weather() {
         />
         <input type="submit" />
       </form>
-
       <div className="row">
         <ul className="col-6">
-          <h2>{city.toUpperCase()}</h2>{" "}
+          <h2><ReactFitty>{city.toUpperCase()}</ReactFitty></h2>{" "}
           <div className="current">
             <h3>{Math.round(temperature)}°C</h3>{" "}
             <img src={iconUrl} alt={iconAlt} className="current-img" />
           </div>
-          <p className="current-conditions">{description}, humidity: {humidity}%, windspeed: {windSpeed}km/h</p>
+          <p className="current-conditions">
+            {description}, humidity: {humidity}%, windspeed: {windSpeed}km/h
+          </p>
         </ul>
         <ul className="col-6">
           <li>monday</li>

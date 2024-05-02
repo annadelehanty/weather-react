@@ -2,6 +2,7 @@ body {
   background-color: aliceblue;
   background-image: url(./images/bg-light.avif);
   color: rgb(7, 7, 65);
+  font-family: coolvetica;
 }
 form {
   display: flex;
@@ -11,7 +12,12 @@ ul {
   list-style: none;
 }
 h2 {
-  font-family: karita;
+  font-family: heyam;
+  margin: 0;
+  text-align: center;
+  color: rgb(242, 242, 255);
+  padding: 5px;
+  max-height: 150px;
 }
 h3 {
   display: inline;
@@ -48,6 +54,10 @@ p {
   padding: 10px;
 }
 @font-face {
-  font-family: karita;
-  src: url(./fonts/Karita.otf);
+  font-family: heyam;
+  src: url(./fonts/Heyam.ttf);
+}
+@font-face {
+  font-family: coolvetica;
+  src: url(./fonts/coolvetica\ rg.otf);
 }
