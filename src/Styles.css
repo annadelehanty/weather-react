@@ -12,7 +12,7 @@ ul {
   list-style: none;
 }
 h2 {
-  font-family: heyam;
+  font-family: LEMONMILK;
   margin: 0;
   text-align: center;
   color: rgb(242, 242, 255);
@@ -54,7 +54,7 @@ p {
   padding: 10px;
 }
 @font-face {
-  font-family: heyam;
+  font-family: LEMONMILK;
   src: url(./fonts/LEMONMILK-Bold.otf);
 }
 @font-face {
