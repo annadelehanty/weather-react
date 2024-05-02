@@ -1,13 +1,11 @@
 import Weather from "./Weather.js";
-import Toggle from "./Toggle.js";
-import Github from "./Github.js";
+import Footer from "./Footer.js";
 
 export default function App() {
   return (
     <div>
       <Weather />
-      <Toggle />
-      <Github />
+      <Footer />
     </div>
   );
 }

@@ -53,6 +53,9 @@ p {
   margin: 0 auto;
   padding: 10px;
 }
+.git-image {
+  height: 50px;
+}
 @font-face {
   font-family: LEMONMILK;
   src: url(./fonts/LEMONMILK-Bold.otf);
