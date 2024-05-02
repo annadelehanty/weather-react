@@ -1,8 +1,13 @@
 import Weather from "./Weather.js";
+import Toggle from "./Toggle.js";
+import Github from "./Github.js";
 
 export default function App() {
-  return <Weather />
-  <Toggle />
-  <Github />;
-
+  return (
+    <div>
+      <Weather />
+      <Toggle />
+      <Github />
+    </div>
+  );
 }

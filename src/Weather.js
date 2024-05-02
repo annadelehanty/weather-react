@@ -57,18 +57,6 @@ export default function Weather() {
           <li>friday</li>
         </ul>
       </div>
-      <footer>
-        <p>
-          my{" "}
-          <a
-            href="https://github.com/annadelehanty/weather-react"
-            target="_blank"
-            rel="noreferrer"
-          >
-            github
-          </a>
-        </p>
-      </footer>
     </div>
   );
 }
