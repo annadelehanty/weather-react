@@ -1,5 +1,8 @@
 import Weather from "./Weather.js";
 
 export default function App() {
-  return <Weather />;
+  return <Weather />
+  <Toggle />
+  <Github />;
+
 }
