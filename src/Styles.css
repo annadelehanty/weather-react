@@ -3,6 +3,7 @@ body {
   background-image: url(./images/bg-light.avif);
   color: rgb(7, 7, 65);
   font-family: coolvetica;
+  padding-top: 20px;
 }
 form {
   display: flex;
@@ -27,6 +28,11 @@ h3 {
 h2,
 p {
   text-align: center;
+}
+footer {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
 .weather-app {
   max-width: 700px;
@@ -55,6 +61,7 @@ p {
 }
 .git-image {
   height: 50px;
+  border-radius: 4px;
 }
 @font-face {
   font-family: LEMONMILK;
