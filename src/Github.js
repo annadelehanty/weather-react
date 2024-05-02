@@ -10,7 +10,7 @@ export default function Github() {
           target="_blank"
           rel="noreferrer"
         >
-          github
+          <img src="./images/github-light.jpg" alt="github logo"/>
         </a>
       </p>
     </footer>
