@@ -39,16 +39,15 @@ export default function Weather() {
         />
         <input type="submit" />
       </form>
-          <h2>{city.toUpperCase()}</h2>
+
       <div className="row">
         <ul className="col-6">
-          <li>
-            <img src={iconUrl} alt={iconAlt} />
-          </li>
-          <li>Temperature: {Math.round(temperature)}°C</li>
-          <li>Description: {description}</li>
-          <li>Humidity: {humidity}%</li>
-          <li>Wind: {windSpeed}km/h</li>
+          <h2>{city.toUpperCase()}</h2>{" "}
+          <div className="current">
+            <h3>{Math.round(temperature)}°C</h3>{" "}
+            <img src={iconUrl} alt={iconAlt} className="current-img" />
+          </div>
+          <p className="current-conditions">{description}, humidity: {humidity}%, windspeed: {windSpeed}km/h</p>
         </ul>
         <ul className="col-6">
           <li>monday</li>

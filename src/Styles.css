@@ -1,3 +1,7 @@
+body {
+  background-color: aliceblue;
+  background-image: url(./images/bg-light.avif);
+}
 form {
   display: flex;
   justify-content: center;
@@ -8,17 +12,37 @@ ul {
 h2 {
   font-family: karita;
 }
+h3 {
+  display: inline;
+  line-height: 100px;
+  font-size: 70px;
+}
 h2,
 p {
   text-align: center;
 }
-
 .weather-app {
   max-width: 700px;
-  background-color: aliceblue;
+  background-color: #D4DFE5;
+  border-radius: 4px;
 }
 .col-6 {
   padding: 0px;
+}
+.current {
+  display: flex;
+  justify-content: space-between;
+}
+.current-img {
+  text-align: right;
+  display: inline;
+  height: 115px;
+}
+.current-conditions {
+  background-color: aqua;
+  border-radius: 4px;
+  max-width: 280px;
+  margin: 0 auto;
 }
 @font-face {
   font-family: karita;
