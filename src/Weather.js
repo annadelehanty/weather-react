@@ -25,6 +25,12 @@ export default function Weather() {
   let day = days[date.getDay()];
   let hours = date.getHours();
   let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   function createDataset(response) {
     setCity(response.data.city);
     setDate(new Date(response.data.time * 1000));
