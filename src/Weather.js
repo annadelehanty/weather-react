@@ -5,6 +5,7 @@ import { ReactFitty } from "react-fitty";
 export default function Weather() {
   let [city, setCity] = useState("");
   let [submittedCity, setSubmittedCity] = useState("");
+  let [date, setDate] = useState(new Date());
   let [temperature, setTemperature] = useState(null);
   let [description, setDescription] = useState("");
   let [humidity, setHumidity] = useState(null);
@@ -12,14 +13,27 @@ export default function Weather() {
   let [iconUrl, setIconUrl] = useState("");
   let [iconAlt, setIconAlt] = useState("");
   let apiKey = "4288f539432426do920341baabbb0tad";
+  let days = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+  ];
+  let day = days[date.getDay()];
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   function createDataset(response) {
+    setCity(response.data.city);
+    setDate(new Date(response.data.time * 1000));
     setTemperature(response.data.temperature.current);
     setDescription(response.data.condition.description);
     setHumidity(response.data.temperature.humidity);
     setWindSpeed(response.data.wind.speed);
     setIconUrl(response.data.condition.icon_url);
     setIconAlt(response.data.condition.icon);
-    setCity(response.data.city);
   }
   function getData(event) {
     let url = `https://api.shecodes.io/weather/v1/current?query=${submittedCity}&key=${apiKey}`;
@@ -50,7 +64,10 @@ export default function Weather() {
             <img src={iconUrl} alt={iconAlt} className="current-img" />
           </div>
           <p className="current-conditions">
-            {description}, humidity: {humidity}%, windspeed: {windSpeed}km/h
+            {day}, {hours}:{minutes} <br />
+            {description}, humidity: {humidity}%,
+            <br />
+            windspeed: {windSpeed}km/h
           </p>
         </ul>
         <ul className="col-xs-12 col-sm-6">
