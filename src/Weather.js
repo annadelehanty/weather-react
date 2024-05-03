@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ReactFitty } from "react-fitty";
-import Form from "./Form.js";
-import WeatherInfo from "./WeatherInfo";
 
 export default function Weather() {
   let [city, setCity] = useState("");
@@ -54,7 +52,14 @@ export default function Weather() {
   return (
     <div className="container-fluid weather-app">
       <h1 className="d-none">interactive weather application</h1>
-      <Form onSubmit={getData} onChange={updateCity} />
+      <form onSubmit={getData}>
+        <input
+          type="search"
+          placeholder="Enter a city..."
+          onChange={updateCity}
+        />
+        <input type="submit" value="Search" />
+      </form>
       <div className="row">
         <ul className="col-xs-12 col-sm-6">
           <h2>
