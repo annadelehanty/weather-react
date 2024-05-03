@@ -4,6 +4,7 @@ body {
   color: rgb(7, 7, 65);
   font-family: coolvetica;
   padding-top: 20px;
+  box-sizing: border-box;
 }
 form {
   display: flex;

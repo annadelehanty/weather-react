@@ -1,6 +1,5 @@
 import React from "react";
 import lightLogo from "./images/github-light.jpg";
-import darkLogo from "./images/github-dark.jpg";
 
 export default function Footer() {
   return (
