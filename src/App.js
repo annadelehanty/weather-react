@@ -5,7 +5,7 @@ import "./Styles.css"
 export default function App() {
   return (
     <div>
-      <Weather />
+      <Weather defaultCity="London" />
       <Footer />
     </div>
   );
