@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ReactFitty } from "react-fitty";
+import PrettyDate from "./PrettyDate.js";
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ready : false});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   const apiKey = "4288f539432426do920341baabbb0tad";
   function handleResponse(response) {
     setWeatherData({
@@ -11,6 +12,7 @@ export default function Weather(props) {
       temperature: response.data.temperature.current,
       iconUrl: response.data.condition.icon_url,
       iconAlt: response.data.condition.icon,
+      date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
       windSpeed: response.data.wind.speed,
@@ -39,7 +41,7 @@ export default function Weather(props) {
               />
             </div>
             <p className="current-conditions">
-              {/*{day}, {hours}:{minutes} <br />*/}
+              <PrettyDate date={weatherData.date} />
               {weatherData.description}, humidity: {weatherData.humidity}%
               <br />
               windspeed: {weatherData.windSpeed}km/h
@@ -58,28 +60,6 @@ export default function Weather(props) {
   } else {
     let url = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}`;
     axios.get(url).then(handleResponse);
-    //let [date, setDate] = useState(new Date());
-    //let days = [
-    //  "sunday",
-    //"monday",
-    //"tuesday",
-    //      "wednesday",
-    //    "thursday",
-    //    "friday",
-    //      "saturday",
-    //];
-    //let day = days[date.getDay()];
-    //let hours = date.getHours();
-    //let minutes = date.getMinutes();
-    //if (minutes < 10) {
-    //minutes = `0${minutes}`;
-    //}
-    //if (hours < 10) {
-    //  hours = `0${hours}`;
-    //}
-    //function createDataset(response) {
-    //  setDate(new Date(response.data.time * 1000));
-    //}
     return <h2 className="loading">loading...</h2>;
   }
 }
