@@ -19,7 +19,7 @@ export default function WeatherStats(props) {
       </div>
       <p className="current-conditions">
         <PrettyDate date={props.data.date} />
-        {props.data.description}, humidity: {props.humidity}%
+        {props.data.description}, humidity: {props.data.humidity}%
         <br />
         windspeed: {props.data.windSpeed}km/h
       </p>
