@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { ReactFitty } from "react-fitty";
-import PrettyDate from "./PrettyDate.js";
+import WeatherStats from "./WeatherStats.js";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -28,25 +27,7 @@ export default function Weather(props) {
           <input type="submit" value="Search" />
         </form>
         <div className="row">
-          <ul className="col-xs-12 col-sm-6">
-            <h2>
-              <ReactFitty>{weatherData.city.toUpperCase()}</ReactFitty>
-            </h2>{" "}
-            <div className="current">
-              <h3>{Math.round(weatherData.temperature)}°C</h3>
-              <img
-                src={weatherData.iconUrl}
-                alt={weatherData.iconAlt}
-                className="current-img"
-              />
-            </div>
-            <p className="current-conditions">
-              <PrettyDate date={weatherData.date} />
-              {weatherData.description}, humidity: {weatherData.humidity}%
-              <br />
-              windspeed: {weatherData.windSpeed}km/h
-            </p>
-          </ul>
+          <WeatherStats data={weatherData}/>
           <ul className="col-xs-12 col-sm-6">
             <li>monday</li>
             <li>tuesday</li>
