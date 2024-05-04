@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactFitty } from "react-fitty";
 import PrettyDate from "./PrettyDate.js";
+import Temperature from "./Temperature.js";
 
 export default function WeatherStats(props) {
   return (
@@ -9,7 +10,7 @@ export default function WeatherStats(props) {
         <ReactFitty>{props.data.city.toUpperCase()}</ReactFitty>
       </h2>{" "}
       <div className="current">
-        <h3>{Math.round(props.data.temperature)}°C</h3>
+        <Temperature celsius={props.data.temperature} />
         <img
           src={props.data.iconUrl}
           alt={props.data.iconAlt}
