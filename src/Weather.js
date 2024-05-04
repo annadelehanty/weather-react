@@ -3,8 +3,7 @@ import axios from "axios";
 import { ReactFitty } from "react-fitty";
 
 export default function Weather(props) {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ready : false});
   const apiKey = "4288f539432426do920341baabbb0tad";
   function handleResponse(response) {
     setWeatherData({
@@ -15,10 +14,10 @@ export default function Weather(props) {
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
       windSpeed: response.data.wind.speed,
+      ready: true,
     });
-    setReady(true);
   }
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="container-fluid weather-app">
         <h1 className="d-none">interactive weather application</h1>
@@ -57,8 +56,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    let city = "london";
-    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    let url = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}`;
     axios.get(url).then(handleResponse);
     //let [date, setDate] = useState(new Date());
     //let days = [
