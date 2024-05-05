@@ -23,7 +23,7 @@ export default function Weather(props) {
   function search() {
     let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(url).then(handleResponse);
-    return <h2 className="loading">loading...</h2>;
+    return null;
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -46,7 +46,7 @@ export default function Weather(props) {
         </form>
         <div className="row">
           <WeatherStats data={weatherData} />
-          <Forecast city={weatherData.city}/>
+          <Forecast data={weatherData.city} />
         </div>
       </div>
     );
