@@ -10,7 +10,6 @@ export default function Forecast(props) {
     setLoaded(true);
   }
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="row col-xs-12 col-sm-6">
         <WeatherForecastDay data={forecast.daily[1]} />

@@ -107,6 +107,12 @@ p {
   width: 100%;
   height: 65px;
 }
+.forecast-element > * {
+  flex: 1;
+}
+.forecast.day {
+  flex: 2;
+}
 .forecast-temp {
   font-family: coolvetica-skinny;
   color: var(--lighter-text);
