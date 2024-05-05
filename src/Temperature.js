@@ -18,7 +18,7 @@ export default function Temperature(props) {
         <span className="units">
           °C |{" "}
           <a href="/" onClick={fahrenheitConversion}>
-            °F
+            <span className="inactive">°F</span>
           </a>
         </span>
       </h3>
@@ -30,7 +30,7 @@ export default function Temperature(props) {
         <span className="units">
           °F |{" "}
           <a href="/" onClick={celsiusConversion}>
-            °C
+            <span className="inactive">°C</span>
           </a>
         </span>
       </h3>

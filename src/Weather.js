@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherStats from "./WeatherStats.js";
+import Forecast from "./Forecast.js";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -45,13 +46,8 @@ export default function Weather(props) {
         </form>
         <div className="row">
           <WeatherStats data={weatherData} />
-          <ul className="col-xs-12 col-sm-6">
-            <li>monday</li>
-            <li>tuesday</li>
-            <li>wednesday</li>
-            <li>thursday</li>
-            <li>friday</li>
-          </ul>
+          <Forecast />
+          
         </div>
       </div>
     );

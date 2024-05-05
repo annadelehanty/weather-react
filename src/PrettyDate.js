@@ -20,7 +20,7 @@ export default function PrettyDate(props) {
   }
   return (
     <div>
-      {day}, {hours}:{minutes}
+      <span className="inactive">last updated:</span> {day}, {hours}:{minutes}
     </div>
   );
 }
