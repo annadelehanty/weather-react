@@ -5,25 +5,32 @@ import WeatherForecastDay from "./WeatherForecastDay";
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
-
-  useEffect (() => {
-    const apiKey = "4288f539432426do920341baabbb0tad";
-    let url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}`;
-
-    axios.get(url).then((response) => {
-      setForecast(response.data.daily);
-      setLoaded(true);
-    });
-  }, [props.city]);
-
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.data]);
+  function handleResponse(response) {
+    setForecast(response.data.daily);
+    setLoaded(true);
+  }
   if (loaded) {
     return (
       <div className="row col-xs-12 col-sm-6">
-        {forecast && <WeatherForecastDay data={forecast[1]} />}
+        <WeatherForecastDay data={forecast[1]} />
+        <hr />
+        <WeatherForecastDay data={forecast[2]} />
+        <hr />
+        <WeatherForecastDay data={forecast[3]} />
+        <hr />
+        <WeatherForecastDay data={forecast[4]} />
+        <hr />
+        <WeatherForecastDay data={forecast[5]} />
         <hr />
       </div>
     );
   } else {
-    return null;
+    const apiKey = "4288f539432426do920341baabbb0tad";
+    let url = `https://api.shecodes.io/weather/v1/forecast?query=${props.data}&key=${apiKey}`;
+    axios.get(url).then(handleResponse);
+    return <div className="row col-xs-12 col-sm-6">loading forecast...</div>;
   }
 }
